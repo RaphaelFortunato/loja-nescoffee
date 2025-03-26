@@ -17,6 +17,7 @@ public class LojaNescoffeeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LojaNescoffeeApplication.class, args);
+		
 	}
 
 }
