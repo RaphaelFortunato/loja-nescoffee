@@ -18,6 +18,7 @@ import br.com.lojanescoffee.model.Acesso;
 import br.com.lojanescoffee.repository.AcessoRepository;
 import br.com.lojanescoffee.service.AcessoService;
 
+//@CrossOrigin(origins = "https://www.jdevtreinamento.com.br")
 @Controller
 @RestController
 public class AcessoController {
@@ -59,7 +60,7 @@ public class AcessoController {
 		
 	}
 	
-	
+	//@Secured({ "ROLE_GERENTE", "ROLE_ADMIN" })
 	@ResponseBody
 	@GetMapping(value = "**/obterAcesso/{id}")
 	public ResponseEntity<Acesso> obterAcesso(@PathVariable("id") Long id) {

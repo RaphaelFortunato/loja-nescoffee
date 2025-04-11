@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /*essas anotações ajuda na hora do projeto rodar sem grande dificuldades, com falta de ativação de recursos*/
@@ -15,7 +16,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement/*ajuda na parte de transação de informações com o banco*/
 public class LojaNescoffeeApplication {
 
+	
+	
 	public static void main(String[] args) {
+		
+		System.out.println(new BCryptPasswordEncoder().encode("123"));
+		
 		SpringApplication.run(LojaNescoffeeApplication.class, args);
 		
 	}

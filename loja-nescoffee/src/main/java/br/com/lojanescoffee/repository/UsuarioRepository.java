@@ -10,7 +10,7 @@ import br.com.lojanescoffee.model.Usuario;
 public interface UsuarioRepository  extends CrudRepository<Usuario, Long>{
 	
 	
-	@Query(value = "select u from Usuario u whee u.login = ?1")
+	@Query(value = "select u from Usuario u where u.login = ?1")
 	Usuario findUserByLogin(String login);
 
 }
