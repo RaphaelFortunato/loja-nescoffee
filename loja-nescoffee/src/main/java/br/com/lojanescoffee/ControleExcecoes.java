@@ -23,6 +23,20 @@ import br.com.lojanescoffee.model.dto.ObjetoErroDTO;
 @RestControllerAdvice
 @ControllerAdvice
 public class ControleExcecoes extends ResponseEntityExceptionHandler {
+	
+	
+	@ExceptionHandler({ExceptionNescoffee.class})
+	public ResponseEntity<Object> handleExceptionCustom(ExceptionNescoffee ex){
+		
+		ObjetoErroDTO objetoErroDTO = new ObjetoErroDTO();
+		
+		objetoErroDTO.setError(ex.getMessage());
+		objetoErroDTO.setCode(HttpStatus.OK.toString());
+		
+		return new ResponseEntity<Object>(objetoErroDTO, HttpStatus.OK);
+		
+	}
+	
 
 	//Captura exeções do projeto
 	@ExceptionHandler({Exception.class, RuntimeException.class, Throwable.class})

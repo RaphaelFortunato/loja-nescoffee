@@ -207,7 +207,7 @@ class LojaNescoffeeApplicationTests extends TestCase {
 	
 	
 	@Test
-	public void testCadastraAcesso() {
+	public void testCadastraAcesso() throws ExceptionNescoffee {
 		
 		Acesso acesso = new Acesso();
 	
